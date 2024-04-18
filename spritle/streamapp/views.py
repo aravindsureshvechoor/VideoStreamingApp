@@ -33,7 +33,7 @@ class PlayVideoView(APIView):
         thread         = threading.Thread(target=video_player.play_video)
         thread.daemon  = True
         thread.start()
-        return Response({'playing':'video is successfully playing in the background'},status=status.HTTP_200_OK)
+        return Response({'playing':'video is successfully playing in the background'})
 
 
 # this view function helps to update an existing video

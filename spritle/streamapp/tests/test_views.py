@@ -137,8 +137,8 @@ class TestStreamingAppViews(TestCase):
         url           = reverse('play_video', kwargs={'video_id': video.id})
         response      = self.client.post(url,**headers)
 
-        # Check that the response status code is 200 OK
-        self.assertEqual(response.status_code, 200)
+        # Checks the response message 
+        self.assertEqual(response.data, {'playing': 'video is successfully playing in the background'})
 
 
 
