@@ -6,6 +6,7 @@ from .serializers import UserRegistrationSerializer
 from django.contrib.auth import get_user_model,authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
 import jwt
+from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.exceptions import InvalidToken
 
@@ -50,5 +51,6 @@ class UserLoginView(APIView):
                 return Response({'inactive':'this account is not active'},status=status.HTTP_403_FORBIDDEN)
         else:
             return Response({'invalid':'invalid username or password'},status=status.HTTP_401_UNAUTHORIZED)
+
 
 

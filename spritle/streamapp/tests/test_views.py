@@ -155,7 +155,7 @@ class TestStreamingAppViews(TestCase):
 
         url          = reverse('update_video',kwargs={'video_id':video.id})
      
-        data         = {'title': 'Updated Title'}  # Your updated data
+        data         = {'title': 'Updated Title'} 
         response     = self.client.put(url, data,**headers, content_type='application/json') 
         self.assertEqual(response.status_code,200)
 
